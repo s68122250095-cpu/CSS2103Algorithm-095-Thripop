@@ -41,3 +41,52 @@ public class FitnessClass {
         System.out.println("Trainer    : " + trainer);
     }
 }
+
+//Add Exception
+public class FitnessClass {
+
+    private String className;
+    private String trainer;
+
+    public static int totalFitnessClass = 0;
+
+    
+    public FitnessClass() {
+        totalFitnessClass++;
+    }
+
+    
+    public FitnessClass(String className, String trainer) {
+        setClassName(className);   
+        setTrainer(trainer);
+        totalFitnessClass++;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        if (className == null || className.trim().isEmpty()) {
+            throw new IllegalArgumentException("Class name cannot be null or empty");
+        }
+        this.className = className;
+    }
+
+    public String getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(String trainer) {
+        if (trainer == null || trainer.trim().isEmpty()) {
+            throw new IllegalArgumentException("Trainer name cannot be null or empty");
+        }
+        this.trainer = trainer;
+    }
+
+    public void showClass() {
+        System.out.println("=== Fitness Class Information ===");
+        System.out.println("Class Name : " + className);
+        System.out.println("Trainer    : " + trainer);
+    }
+}
